@@ -1,0 +1,21 @@
+# 应用名称
+#spring.application.name=springcloud-00-eureka
+# 设置spring应用命名，同命名的应用会注册到同一个服务集群中
+spring:
+  application:
+    name: cloud-eureka
+# 设置Eureka Server Web控制台端口号
+server:
+  port: 8761
+# Eureka设置
+# 是否将自己注册到Eureka Server中，默认为true，设置为false避免回路注册
+# 是否从Eureka Server中发现服务，默认为true，设置为false避免回路发现
+# 服务的url地址 defaultZone默认空间
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8762/eureka/
+  instance:
+    hostname: eureka1
